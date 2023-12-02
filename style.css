@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html, body{
+    height: 100vh;
+    background-color: rgb(213, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+.main-container{
+    background-color: white;
+    border-radius: 20px;
+    height: 90vh;
+    margin: 50px 0px;
+    padding:50px 30px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+h3{
+    text-transform: uppercase;
+    font-size: 16px;
+}
+h1{
+    font-size: 35px;
+    letter-spacing: .9px;
+    font-weight:bold;
+}
+#current-balance{
+    margin-top: 40px;
+}
+#income-expense{
+    margin-top: 12px;
+    display: flex;
+    box-shadow: .5px .5px 1px 1.5px rgb(35, 35, 35, .3);
+}
+#income-expense div{
+    padding: 20px 60px;
+    text-align: center;
+}
+@media (max-width:600px){
+    #income-expense div{
+        padding: 20px 30px;
+    }
+}
+#income-expense div p{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.history{
+    display: flex;
+    justify-content: space-between;
+    padding: 7.5px 12px 7.5px 7px;
+    margin-top: 10px;
+    box-shadow: -1px 0px 1px 1px rgb(35, 35, 35, .2);
+    font-weight: 500;
+    position: relative;
+    transition: 2s ease-in;
+}
+
+.income-color::after,
+.expense-color::after{
+    content: "";
+        position: absolute;
+        top: 0;
+        right:0px;
+        height: 100%;
+        width: 5px;
+        z-index: 10;
+}
+.income-color::after{
+    background-color: rgb(26, 206, 26);
+}
+.expense-color::after{
+    background-color: rgb(220, 7, 7);
+}
+#New-transaction{
+    margin-top: 25px;
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+}
+.detail-wrapper label{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.detail-wrapper input{
+    padding: 7px;
+    border: 1px solid rgba(0,0,0,.2);
+    outline:none
+}
+.detail-wrapper input::placeholder{
+    font-size: 15px;
+}
+ /* Hide the increment and decrement arrows */
+ #input-amount[type="number"]::-webkit-inner-spin-button,
+ #input-amount[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+
+ #input-amount[type="number"] {
+   -moz-appearance: textfield; /* Firefox */
+ }
+ 
+#transaction-type{
+    display: flex;
+    gap: 15px;
+}
+button{
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(130, 245, 245);
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+#transaction-history{
+    margin-top: 25px;
+    position: relative;
+}
+.delete{
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    z-index: 10;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    opacity: .7;
+    transition: all .2s ease-in-out;
+}
+.delete:hover{
+    opacity: 1;
+    transform: scale(1.09);
+}
+#expense-warning{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 25px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+#warning-relative{
+    position: relative;
+}
+#warning-relative span{
+       font-size: 10px;
+        position: absolute;
+        right: -15px;
+        top: -19px;
+        cursor: pointer;
+}

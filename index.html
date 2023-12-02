@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track your expense</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="main-inner">
+        <h2>Expense Tracker</h2>
+
+        <div id="current-balance">
+          <h3>Your Balance</h3>
+          <h1>$200.00</h1>
+        </div>
+
+        <div id="income-expense">
+          <div id="income">
+            <h3>income</h3>
+            <p style="color: rgb(26, 206, 26); margin-top: 6px">$300.00</p>
+          </div>
+          <div id="expense">
+            <h3>expense</h3>
+            <p style="color: rgb(180, 5, 5); margin-top: 6px">$230.00</p>
+          </div>
+        </div>
+
+        <div id="transaction-history">
+          <!-- fetching from local storage -->
+        </div>
+
+        <div id="New-transaction">
+          <h2
+            style="
+              text-align: start;
+              font-size: 20px;
+              padding-bottom: 5px;
+              border-bottom: 2px solid rgb(35, 35, 35, 0.2);
+            "
+          >
+            Add new transaction
+          </h2>
+          <div class="detail-wrapper">
+            <label for="input-text">Text</label>
+            <input type="text" placeholder="Enter text..." id="input-text" />
+          </div>
+
+          <div id="transaction-type">
+            <input
+              type="radio"
+              id="income"
+              name="checking"
+              value="income"
+            />
+            <label for="income">Income</label><br />
+            <input
+              type="radio"
+              id="expense"
+              name="checking"
+              value="expense"
+             checked/>
+            <label for="expense">Expense</label>
+          </div>
+
+          <div class="detail-wrapper">
+            <label for="input-amount">Amount</label>
+            <input type="number" pattern="\d*" placeholder="Enter amount..." id="input-amount" />
+          </div>
+
+          <button type="button" id="submit-button">Add transaction</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="expense-warning" hidden>
+      <div id="warning-relative">
+            &#9888 Watch Your Expenses!!!
+            <span id="warning-hide">&#10060</span>
+      </div>
+    </div>
+    <script src="style.js"></script>
+  </body>
+</html>
