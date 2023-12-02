@@ -15,7 +15,6 @@ html, body{
 .main-container{
     background-color: white;
     border-radius: 20px;
-    height: 90vh;
     margin: 50px 0px;
     padding:50px 30px;
     display: flex;

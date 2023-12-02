@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     inputTransactionAmount=document.getElementById("input-amount"),
     button=document.getElementById("submit-button"),
      warningHide=document.getElementById("warning-hide"),
-    expenseWarning=document.getElementById("expense-warning");
+    expenseWarning=document.getElementById("expense-warning"),
+    clearHistory=document.getElementById("clear-history-button");
     
     
     let fieldEnter, deleteElement, incomeAmount=0, expenseAmount=0, signedCurrentBalance=0;
@@ -131,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
        setTimeout(() => {//set timeout is done so that there would be no asynchronous like event while fetching from local storage.
         getDataFromLocalStorage();
-        console.log("get data called")
        }, 100);
     } 
 
@@ -142,5 +142,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
     warningHide.addEventListener("click", ()=>{
         expenseWarning.hidden=true;
+    })
+
+    clearHistory.addEventListener("click", ()=>{
+        let clearedData=JSON.parse(localStorage.getItem('myData')) || [];
+        clearedData=null;
+        localStorage.setItem('myData', clearedData);
+        setTimeout(() => {
+                getDataFromLocalStorage();
+        }, 200);
     })
 });
